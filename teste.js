@@ -135,11 +135,21 @@ function logaResultado(linha) {
     horaNaoTributada = '';
   } else if (codigoRegimeTrabalho === 3 || codigoRegimeTrabalho === 11) {
     diaTributado = (salario + quinquenio + sextaParte + subsidio + difPiso + licencas) / diasTrabalhados;
-    diaNaoTributado = (insalubridade + periculosidade + quinquenio + sextaParte + adicionalDeCurso + ccs + fgs) / diasTrabalhados;
+    diaNaoTributado = (insalubridade + periculosidade  + adicionalDeCurso + ccs + fgs) / diasTrabalhados;
     horaTributada = diaTributado * diasTrabalhados / horasMensais;
     horaNaoTributada = diaNaoTributado * diasTrabalhados / horasMensais;
   }
 
+  const faltasDiaTributadoCalcula = diaTributado * faltaDiaTributadaQtde;
+  const faltasHoraTributadoCalcula = horaTributada * faltaHoraTributadaQtde;
+  const faltasDiaNaoTributadoCalcula = diaNaoTributado * faltaDiaNaoTributadaQtde;
+  const faltasHoraNaoTributadoCalcula = horaNaoTributada * faltaHoraNaoTributadaQtde;
+  const faltasDiaMesAnteriorCalcula = diaTributado * faltaDiaMesAnteriorQtde;
+  const faltasHoraMesAnteriorCalcula = horaTributada * faltaHoraMesAnteriorQtde;
+  const dsrTributadoCalcula = diaTributado * dsrTributadoQtde;
+  const dsrNaoTributadoCalcula = diaNaoTributado * dsrNaoTributadoQtde
+  const dsrMesAnteriorCalcula = diaTributado * dsrMesAnteriorQtde;
+  
   const totalDeProventos = salario + insalubridade + subsidio + difPiso + periculosidade + quinquenio + sextaParte + adicionalDeCurso + ccs + fgs + licencas
 
   console.log(`Nome: ${nome}`);
@@ -177,6 +187,21 @@ function logaResultado(linha) {
   console.log(`DSRT: ${dsrTributadoQtde} dias R$ ${dsrTributadoVlr}`);
   console.log(`DSRNT: ${dsrNaoTributadoQtde} dias R$ ${dsrNaoTributadoVlr}`);
   console.log(`DSRMA: ${dsrMesAnteriorQtde} dias R$ ${dsrMesAnteriorVlr}`)
+  console.log(' ')
+  console.log('----- Conferência -----');
+  console.log('--- Faltas ---');
+  console.log(`DT: R$ ${faltasDiaTributadoCalcula.toFixed(2)}`);
+  console.log(`HT: R$ ${faltasHoraTributadoCalcula.toFixed(2)}`);
+  console.log(`DNT: R$ ${faltasDiaNaoTributadoCalcula.toFixed(2)}`);
+  console.log(`HNT: R$ ${faltasHoraNaoTributadoCalcula.toFixed(2)}`);
+  console.log(`DMA: R$ ${faltasDiaMesAnteriorCalcula.toFixed(2)}`);
+  console.log(`HMA: R$ ${faltasHoraMesAnteriorCalcula.toFixed(2)}`);
+  console.log(' ')
+  console.log('--- DSR ---');
+  console.log(`DSRT: R$ ${dsrTributadoCalcula.toFixed(2)}`);
+  console.log(`DSRNT: R$ ${dsrNaoTributadoCalcula.toFixed(2)}`);
+  console.log(`DSRMA: R$ ${dsrMesAnteriorCalcula.toFixed(2)}`);
+  
   console.log(' ')
   console.log(`Total de Proventos: R$ ${totalDeProventos.toFixed(2)}`);
   console.log(`------------------------------------`);
