@@ -12,24 +12,16 @@ console.log(`------------------------------------`);
 
 // Usavamos o 'fs' para ler o arquivo e o SheetJS para interpretar os dados portanto precisamos de um buffer para fazer a ponte entre os dois, agora buscar uma alternativa para o fs que funcionar no navegador
 // const buffer = fs.readFileSync(caminhoInput);
-const caminhoBuffer = 'FaltasCSV.csv';
-const workbook = XLSX.read(caminhoBuffer, { type: 'buffer' });
+// const caminhoBuffer = 'FaltasCSV.csv';
+// const workbook = XLSX.read(caminhoBuffer, { type: 'buffer' });
 
 // --- MANIPULAÇÃO DOS DADOS ---
 // Pega o nome da primeira aba
-const nomeDaPrimeiraAba = workbook.SheetNames[0];
-const worksheet = workbook.Sheets[nomeDaPrimeiraAba];
+// const nomeDaPrimeiraAba = workbook.SheetNames[0];
+// const worksheet = workbook.Sheets[nomeDaPrimeiraAba];
 
-// Converte a planilha para JSON, o formato mais fácil de trabalhar em JS
-const dadosEmJson = XLSX.utils.sheet_to_json(worksheet);
-
-
-let botaoGerarLaudo = document.querySelector('.btn-resultado');
-let resultado = document.querySelector('.resultado');
-
-botaoGerarLaudo.addEventListener('click', () => {
-  console.log('Botão clicado!')
-})
+// // Converte a planilha para JSON, o formato mais fácil de trabalhar em JS
+// const dadosEmJson = XLSX.utils.sheet_to_json(worksheet);
 
 function logaResultado(linha) {
   const v001Qtde = (dadosEmJson[linha].VB001_Qtde ?? 0) / 100000;
@@ -109,7 +101,7 @@ function logaResultado(linha) {
   const faltaHoraMesAnteriorVlr = (dadosEmJson[linha].VB872_Valor ?? 0) / 100;
   const dsrMesAnteriorQtde = (dadosEmJson[linha].VB510_Qtde ?? 0) / 100000;
   const dsrMesAnteriorVlr = (dadosEmJson[linha].VB510_Valor ?? 0) / 100;
-  
+
 
   const nome = dadosEmJson[linha].Nome_Funcionario;
   const matricula = dadosEmJson[linha].Matricula;
@@ -157,7 +149,7 @@ function logaResultado(linha) {
   const dsrTributadoCalcula = diaTributado * dsrTributadoQtde;
   const dsrNaoTributadoCalcula = diaNaoTributado * dsrNaoTributadoQtde
   const dsrMesAnteriorCalcula = diaTributado * dsrMesAnteriorQtde;
-  
+
   const totalDeProventos = salario + insalubridade + subsidio + difPiso + periculosidade + quinquenio + sextaParte + adicionalDeCurso + ccs + fgs + licencas
 
   console.log(`Nome: ${nome}`);
@@ -209,28 +201,8 @@ function logaResultado(linha) {
   console.log(`DSRT: R$ ${dsrTributadoCalcula.toFixed(2)}`);
   console.log(`DSRNT: R$ ${dsrNaoTributadoCalcula.toFixed(2)}`);
   console.log(`DSRMA: R$ ${dsrMesAnteriorCalcula.toFixed(2)}`);
-  
+
   console.log(' ')
   console.log(`Total de Proventos: R$ ${totalDeProventos.toFixed(2)}`);
   console.log(`------------------------------------`);
 }
-
-logaResultado(31)
-
-
-// for (let linha in dadosEmJson) {
-//   logaResultado(linha)
-// }
-
-// console.log(`Nome: ${dadosEmJson[2].Nome_Funcionario}`);
-// console.log(`Matricula: ${dadosEmJson[2].Matricula}`);
-// console.log(`Dias trabalhados: ${dadosEmJson[2].VB001_Qtde/100000}`);
-// console.log(`Salário: ${dadosEmJson[2].VB001_Valor/100}`);
-// console.log(`------------------------------------------------`);
-// console.log(`Nome: ${dadosEmJson[3].Nome_Funcionario}`);
-// console.log(`Matricula: ${dadosEmJson[3].Matricula}`);
-// console.log(`Dias trabalhados: ${dadosEmJson[3].VB001_Qtde/100000}`);
-// console.log(`Salário: ${dadosEmJson[3].VB001_Valor/100}`);
-
-
-// console.log((dadosEmJson[2].VB001_Valor/100) + (dadosEmJson[3].VB001_Valor/100))
