@@ -7,11 +7,13 @@ inputDeArquivo.addEventListener('change', (e) => {
     leitor.onload = (e) => {
         const dados = new Uint8Array(e.target.result);
         const planilha = XLSX.read(dados, { type: 'array' });
-        console.log(planilha);
+        // console.log(planilha);
     }       
     
     leitor.readAsArrayBuffer(arquivo);
 
+    const dadosEmJson = XLSX.utils.sheet_to_json(planilha.Sheets[planilha.SheetNames[0]]);
 
+    console.log(dadosEmJson);
 });
 
