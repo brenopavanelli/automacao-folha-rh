@@ -1,28 +1,3 @@
-// // Passo 1: Importar as bibliotecas necessárias
-// // A biblioteca 'xlsx' é o próprio SheetJS
-// // A biblioteca 'fs' (File System) é nativa do Node.js e serve para ler e escrever arquivos no computador -> mas não pode ser usado no navegador
-
-
-// console.log("Iniciando o script de processamento...");
-
-// // --- LEITURA DO ARQUIVO DE ENTRADA ---
-// const caminhoInput = 'FaltasCSV.csv';
-// console.log(`Lendo o arquivo ${caminhoInput}`);
-// console.log(`------------------------------------`);
-
-// // Usavamos o 'fs' para ler o arquivo e o SheetJS para interpretar os dados portanto precisamos de um buffer para fazer a ponte entre os dois, agora buscar uma alternativa para o fs que funcionar no navegador
-// // const buffer = fs.readFileSync(caminhoInput);
-// // const caminhoBuffer = 'FaltasCSV.csv';
-// // const workbook = XLSX.read(caminhoBuffer, { type: 'buffer' });
-
-// // --- MANIPULAÇÃO DOS DADOS ---
-// // Pega o nome da primeira aba
-// // const nomeDaPrimeiraAba = workbook.SheetNames[0];
-// // const worksheet = workbook.Sheets[nomeDaPrimeiraAba];
-
-// // // Converte a planilha para JSON, o formato mais fácil de trabalhar em JS
-// // const dadosEmJson = XLSX.utils.sheet_to_json(worksheet);
-
 export default function logaResultado(linha, dadosEmJson) {
   const v001Qtde = (dadosEmJson[linha].VB001_Qtde ?? 0) / 100000;
   const v001Vlr = (dadosEmJson[linha].VB001_Valor ?? 0) / 100;

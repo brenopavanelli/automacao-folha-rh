@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +15,45 @@
     <button class="enviar">Enviar</button>
     <button class="btn-resultado">Gerar Laudo</button>
     <div class="resultado"></div>
+    <br> 
+    <input type="file" id="csvFileInput" accept=".csv">
+    <button onclick="convertCsvToJson()">Converter</button>
+    
     <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
-    <script type="module" src="src/AdicionaResultado.js"></script>
+    <script>
+        function convertCsvToJson() {
+            // 1. Pega o elemento de input do arquivo
+            const fileInput = document.getElementById('csvFileInput');
+
+            // 2. Pega o primeiro arquivo selecionado (o objeto File)
+            const file = fileInput.files[0];
+
+            // 3. Verifica se um arquivo foi realmente selecionado
+            if (!file) {
+              alert("Por favor, selecione um arquivo CSV primeiro!");
+              return;
+            }
+
+            // 4. Usa o PapaParse para processar o arquivo
+            Papa.parse(file, {
+              header: true,        // Trata a primeira linha como cabeçalho (cria objetos com chaves)
+              dynamicTyping: true, // Converte tipos de dados automaticamente (números, booleanos)
+              complete: function(results) {
+                // 5. A função 'complete' é chamada quando a conversão termina
+                console.log("Conversão concluída!");
+                console.log("Dados convertidos (array de objetos):", results.data);
+
+                // O objeto 'results' também contém outras informações úteis:
+                // console.log("Erros:", results.errors);
+                // console.log("Metadados:", results.meta);
+              },
+              error: function(error) {
+                // Função chamada em caso de erro na leitura do arquivo
+                console.error("Ocorreu um erro ao processar o arquivo:", error);
+              }
+            });
+          }
+    </script>
     
 </body>
 </html>
