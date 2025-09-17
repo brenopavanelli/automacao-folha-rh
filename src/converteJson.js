@@ -1,3 +1,5 @@
+import logaResultado from './logaResultado.js'
+
 function convertCsvToJsonPromise() {
   return new Promise((resolve, reject) => {
     const fileInput = document.getElementById('csvFileInput');
@@ -34,6 +36,7 @@ async function iniciarConversaoEArmazenar() {
 
         // A linha abaixo só será executada DEPOIS que a conversão terminar
         console.log("Dados armazenados na variável 'dadosConvertidos':", dadosConvertidos);
+        logaResultado(1227, dadosConvertidos);
         alert(`Conversão concluída! ${dadosConvertidos.length} linhas foram processadas.`);
 
         // Agora você pode usar a variável 'dadosConvertidos' aqui
@@ -56,3 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
     convertButton.addEventListener('click', iniciarConversaoEArmazenar);
 
 });
+
