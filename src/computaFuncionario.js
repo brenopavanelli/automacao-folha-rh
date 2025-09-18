@@ -1,15 +1,11 @@
-// Função auxiliar para tratar a conversão dos valores do JSON
 function converterParaNumero(valor) {
-  // Se o valor for nulo ou indefinido, retorna 0
   if (valor == null) {
     return 0;
   }
-  // Converte para string, substitui a vírgula por ponto, e então converte para número
   return parseFloat(String(valor).replace(',', '.'));
 }
 
-export default function logaResultado(linha, dadosEmJson) {
-  // --- VALORES CONVERTIDOS SEM AS DIVISÕES ---
+export default function computaFuncionario(linha, dadosEmJson) {
   const v001Qtde = converterParaNumero(dadosEmJson[linha].VB001_Qtde);
   const v001Vlr = converterParaNumero(dadosEmJson[linha].VB001_Valor);
   const v019Qtde = converterParaNumero(dadosEmJson[linha].VB019_Qtde);
@@ -142,56 +138,5 @@ export default function logaResultado(linha, dadosEmJson) {
 
   const totalDeProventos = salario + insalubridade + subsidio + difPiso + periculosidade + quinquenio + sextaParte + adicionalDeCurso + ccs + fgs + licencas;
 
-  console.log(`Nome: ${nome}`);
-  console.log(`Matricula: ${matricula}`);
-  console.log(`Código do Regime de Trabalho: ${codigoRegimeTrabalho}`);
-  console.log(`Dias trabalhados: ${diasTrabalhados}`);
-  console.log(`Horas mensais: ${horasMensais}h`);
-  console.log(`Salário: R$ ${salario.toFixed(2)}`);
-  console.log(' ');
-  console.log(`Insalubridade: R$ ${insalubridade.toFixed(2)}`);
-  console.log(`Subsidio: R$ ${subsidio.toFixed(2)}`);
-  console.log(`Dif. Piso: R$ ${difPiso.toFixed(2)}`);
-  console.log(`Periculosidade: R$ ${periculosidade.toFixed(2)}`);
-  console.log(`Quinquênio: R$ ${quinquenio.toFixed(2)}`);
-  console.log(`Sexta Parte: R$ ${sextaParte.toFixed(2)}`);
-  console.log(`Adicional de Curso: R$ ${adicionalDeCurso.toFixed(2)}`);
-  console.log(`CCSP: R$ ${ccs.toFixed(2)}`);
-  console.log(`FGs: R$ ${fgs.toFixed(2)}`);
-  console.log(`Licenças: R$ ${licencas.toFixed(2)}`);
-  console.log(' ');
-  console.log(`Dia Tributado: R$ ${diaTributado.toFixed(2)}`);
-  console.log(`Dia Não Tributado: R$ ${diaNaoTributado.toFixed(2)}`);
-  console.log(`Hora Tributada: R$ ${horaTributada.toFixed(2)}`);
-  console.log(`Hora Não Tributada: R$ ${horaNaoTributada.toFixed(2)}`);
-  console.log(' ');
-  console.log('--- Faltas ---');
-  console.log(`DT: ${faltaDiaTributadaQtde} dias R$ ${faltaDiaTributadaVlr}`);
-  console.log(`HT: ${faltaHoraTributadaQtde} horas R$ ${faltaHoraTributadaVlr}`);
-  console.log(`DNT: ${faltaDiaNaoTributadaQtde} dias R$ ${faltaDiaNaoTributadaVlr}`);
-  console.log(`HNT: ${faltaHoraNaoTributadaQtde} horas R$ ${faltaHoraNaoTributadaVlr}`);
-  console.log(`DMA: ${faltaDiaMesAnteriorQtde} dias R$ ${faltaDiaMesAnteriorVlr}`);
-  console.log(`HMA: ${faltaHoraMesAnteriorQtde} horas R$ ${faltaHoraMesAnteriorVlr}`);
-  console.log(' ');
-  console.log('--- DSR ---');
-  console.log(`DSRT: ${dsrTributadoQtde} dias R$ ${dsrTributadoVlr}`);
-  console.log(`DSRNT: ${dsrNaoTributadoQtde} dias R$ ${dsrNaoTributadoVlr}`);
-  console.log(`DSRMA: ${dsrMesAnteriorQtde} dias R$ ${dsrMesAnteriorVlr}`);
-  console.log(' ');
-  console.log('----- Conferência -----');
-  console.log('--- Faltas ---');
-  console.log(`DT: R$ ${faltasDiaTributadoCalcula.toFixed(2)}`);
-  console.log(`HT: R$ ${faltasHoraTributadoCalcula.toFixed(2)}`);
-  console.log(`DNT: R$ ${faltasDiaNaoTributadoCalcula.toFixed(2)}`);
-  console.log(`HNT: R$ ${faltasHoraNaoTributadoCalcula.toFixed(2)}`);
-  console.log(`DMA: R$ ${faltasDiaMesAnteriorCalcula.toFixed(2)}`);
-  console.log(`HMA: R$ ${faltasHoraMesAnteriorCalcula.toFixed(2)}`);
-  console.log(' ');
-  console.log('--- DSR ---');
-  console.log(`DSRT: R$ ${dsrTributadoCalcula.toFixed(2)}`);
-  console.log(`DSRNT: R$ ${dsrNaoTributadoCalcula.toFixed(2)}`);
-  console.log(`DSRMA: R$ ${dsrMesAnteriorCalcula.toFixed(2)}`);
-  console.log(' ');
-  console.log(`Total de Proventos: R$ ${totalDeProventos.toFixed(2)}`);
-  console.log(`------------------------------------`);
+
 }
