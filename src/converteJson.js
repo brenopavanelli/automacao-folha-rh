@@ -1,4 +1,4 @@
-import logaResultado from './logaResultado.js'
+import logaResultado from './logaResultado.js' 
 
 function convertCsvToJsonPromise() {
   return new Promise((resolve, reject) => {
