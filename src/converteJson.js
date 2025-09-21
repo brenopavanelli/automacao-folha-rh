@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Adiciona o "ouvinte de evento" de clique.
     // Quando o botão for clicado, a função 'iniciarConversaoEArmazenar' será executada.
     convertButton.addEventListener('click', iniciarConversaoEArmazenar);
+}); 
 
-});
+
 
