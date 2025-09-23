@@ -96,7 +96,107 @@ class Funcionario {
             qtde: converterParaNumero(dadosEmJson[linha].VB029_Qtde),
             vlr: converterParaNumero(dadosEmJson[linha].VB029_Valor)
         }
-        this.
+        this.vb056 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB056_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB056_Valor)
+        }
+        this.vb843 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB843_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB843_Valor)
+        }
+        this.vb032 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB032_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB032_Valor)
+        }
+        this.vb035 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB035_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB035_Valor)
+        }
+        this.vb036 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB036_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB036_Valor)
+        }
+        this.vb867 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB867_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB867_Valor)
+        }
+        this.vb108 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB108_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB108_Valor)
+        }
+        this.vb109 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB109_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB109_Valor)
+        }
+        this.vb110 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB110_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB110_Valor)
+        }
+        this.vb111 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB111_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB111_Valor)
+        }
+        this.vb468 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB468_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB468_Valor)
+        }
+        this.vb469 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB469_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB469_Valor)
+        }
+        this.vb476 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB476_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB476_Valor)
+        }
+        this.vb479 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB479_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB479_Valor)
+        }
+        this.vb480 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB480_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB480_Valor)
+        }
+        this.vb827 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB827_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB827_Valor)
+        }
+        this.vb866 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB866_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB866_Valor)
+        }
+        this.vb868 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB868_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB868_Valor)
+        }
+        this.vb869 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB869_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB869_Valor)
+        }
+        this.vb1500 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1500_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1500_Valor)
+        }
+        this.vb1600 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1600_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1600_Valor)
+        }
+        this.vb1601 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1601_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1601_Valor)
+        }
+        this.vb1603 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1603_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1603_Valor)
+        }
+        this.vb1606 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1606_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1606_Valor)
+        }
+        this.vb1607 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB1607_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB1607_Valor)
+        }
+        
         
         this.diasDeLicenca = 0;
         this.cargaSuplementar = 0;
