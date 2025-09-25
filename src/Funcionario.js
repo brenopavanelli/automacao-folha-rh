@@ -46,6 +46,18 @@ class Funcionario {
     vb1606;
     vb1607;
 
+    vb471;
+    vb472;
+    vb171;
+    vb172;
+    vb504;
+    vb604;
+    vb871;
+    vb872;
+    vb971;
+    vb972;
+    vb510;
+
     salario;
     insalubridade;
     subsidio;
@@ -195,6 +207,51 @@ class Funcionario {
         this.vb1607 = {
             qtde: converterParaNumero(dadosEmJson[linha].VB1607_Qtde),
             vlr: converterParaNumero(dadosEmJson[linha].VB1607_Valor)
+        }
+
+        this.vb471 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB471_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB471_Valor)
+        }
+        this.vb472 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB472_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB472_Valor)
+        }
+        this.vb171 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB171_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB171_Valor)
+        }
+        this.vb172 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB172_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB172_Valor)
+        }
+        this.vb504 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB504_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB504_Valor)
+        }
+        this.vb604 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB604_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB604_Valor)
+        }
+        this.vb871 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB871_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB871_Valor)
+        }
+        this.vb872 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB872_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB872_Valor)
+        }
+        this.vb971 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB971_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB971_Valor)
+        }
+        this.vb972 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB972_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB972_Valor)
+        }
+        this.vb510 = {
+            qtde: converterParaNumero(dadosEmJson[linha].VB510_Qtde),
+            vlr: converterParaNumero(dadosEmJson[linha].VB510_Valor)
         }
         
         
